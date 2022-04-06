@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyin.portrait.dao.DataInterfaceVehicleRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tianyin.portrait.domain.DataInterfaceVehicleRecordModel">
+        <id column="id" property="id" />
+        <result column="parking_area_name" property="parkingAreaName" />
+        <result column="name" property="name" />
+        <result column="car_number" property="carNumber" />
+        <result column="car_type_name" property="carTypeName" />
+        <result column="channel_name" property="channelName" />
+        <result column="channel_state" property="channelState" />
+        <result column="event_type" property="eventType" />
+        <result column="check_type" property="checkType" />
+        <result column="check_time" property="checkTime" />
+        <result column="current_date_time" property="currentDateTime" />
+        <result column="xxdm" property="xxdm" />
+        <result column="extra_modifytime" property="extraModifytime" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, parking_area_name, name, car_number, car_type_name, channel_name, channel_state, event_type, check_type, check_time, current_date_time, xxdm, extra_modifytime
+    </sql>
+
+
+	<select id="selectPagedList" resultType="com.tianyin.portrait.domain.DataInterfaceVehicleRecordModel">
+		select * from data_interface_vehicle_record
+	</select>
+	
+</mapper>

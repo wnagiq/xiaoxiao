@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lollipop.candy.test.dao.TestMapper">
+
+	<select id="selectPagedList" resultType="com.lollipop.candy.test.domain.TestModel">
+		select id, username, name from base_user
+	</select>
+	
+	
+	<select id="selectList" resultType="com.lollipop.candy.test.domain.TestModel">
+		select id, username, name from base_user
+	</select>
+
+	<insert id="saveToken">
+		INSERT INTO t_dm_test_copy (dm, px, salt) VALUES (#{token.dm}, #{token.px}, #{token.salt})
+	</insert>
+
+	<select id="selectDmTestList" resultType="com.lollipop.candy.test.domain.DmTestModel">
+		select dm, px from t_dm_test_copy
+	</select>
+	
+	<update id="updateSalt">
+		update t_dm_test_copy set salt = #{dm_test.salt} where px = #{dm_test.px}
+	</update>
+</mapper>

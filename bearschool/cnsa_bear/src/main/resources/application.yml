@@ -1,0 +1,46 @@
+
+server:
+  port: 9527
+  servlet:
+    context-path: /bear
+  
+spring:
+  application: 
+    name: bear
+  datasource:
+    dynamic:
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: standardHikariCP
+      # 配置默认数据源
+      primary: primary
+      datasource:
+        # 数据源-1，不可修改
+        primary:
+          username: root
+          password: hzty@2021
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://192.168.3.25:4408/tetf?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+
+  redis:
+    host: 192.168.3.20
+    port: 6379
+    password:
+    jedis:
+      pool:
+        min-idle: 8
+        max-idle: 500
+        max-active: 2000
+        max-wait: 10000
+    timeout: 0
+      
+#mybatis plus 设置
+mybatis-plus:
+  type-aliases-package: com.lollipop.candy.domain
+  mapper-locations: classpath*:mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 这里使用控制台输出, 其他需引入依赖

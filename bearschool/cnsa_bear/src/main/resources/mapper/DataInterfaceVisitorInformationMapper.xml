@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyin.portrait.dao.DataInterfaceVisitorInformationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tianyin.portrait.domain.DataInterfaceVisitorInformationModel">
+        <id column="id" property="id" />
+        <result column="pers_person_pin" property="persPersonPin" />
+        <result column="cert_type" property="certType" />
+        <result column="cert_num" property="certNum" />
+        <result column="visit_emp_name" property="visitEmpName" />
+        <result column="visit_emp_phone" property="visitEmpPhone" />
+        <result column="company" property="company" />
+        <result column="visit_reason" property="visitReason" />
+        <result column="visitor_count" property="visitorCount" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="card_no" property="cardNo" />
+        <result column="face_photo" property="facePhoto" />
+        <result column="state" property="state" />
+        <result column="third_id" property="thirdId" />
+        <result column="current_date" property="currentDate" />
+        <result column="xxdm" property="xxdm" />
+        <result column="extra_modifytime" property="extraModifytime" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pers_person_pin, cert_type, cert_num, visit_emp_name, visit_emp_phone, company, visit_reason, visitor_count, start_time, end_time, card_no, face_photo, state, third_id, current_date, xxdm, extra_modifytime
+    </sql>
+
+
+	<select id="selectPagedList" resultType="com.tianyin.portrait.domain.DataInterfaceVisitorInformationModel">
+		select * from data_interface_visitor_information
+	</select>
+	
+</mapper>

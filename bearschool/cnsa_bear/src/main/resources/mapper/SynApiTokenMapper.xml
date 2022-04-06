@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyin.portrait.dao.SynApiTokenMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tianyin.portrait.domain.SynApiTokenModel">
+        <result column="extra_creater" property="extraCreater" />
+        <result column="extra_createtime" property="extraCreatetime" />
+        <result column="extra_modifier" property="extraModifier" />
+        <result column="extra_modifytime" property="extraModifytime" />
+        <result column="pxh" property="pxh" />
+        <result column="id" property="id" />
+        <result column="access_token" property="accessToken" />
+        <result column="access_type" property="accessType" />
+        <result column="expires_in" property="expiresIn" />
+        <result column="syndate" property="syndate" />
+        <result column="notes" property="notes" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        extra_creater, extra_createtime, extra_modifier, extra_modifytime, pxh, id, access_token, access_type, expires_in, syndate, notes
+    </sql>
+
+
+	<select id="selectPagedList" resultType="com.tianyin.portrait.domain.SynApiTokenModel">
+		select * from syn_api_token
+	</select>
+	
+</mapper>

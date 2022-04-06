@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyin.portrait.dao.BureauOfEducationConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tianyin.portrait.domain.BureauOfEducationConfigModel">
+        <id column="id" property="id" />
+        <result column="area" property="area" />
+        <result column="name" property="name" />
+        <result column="title" property="title" />
+        <result column="address" property="address" />
+        <result column="x" property="x" />
+        <result column="y" property="y" />
+        <result column="logo_url" property="logoUrl" />
+        <result column="icon_url" property="iconUrl" />
+        <result column="login_url" property="loginUrl" />
+        <result column="scbj" property="scbj" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, area, name, title, address, x, y, logo_url, icon_url, login_url, scbj
+    </sql>
+
+
+	<select id="selectPagedList" resultType="com.tianyin.portrait.domain.BureauOfEducationConfigModel">
+		select * from t_bureau_of_education_config
+	</select>
+	
+</mapper>

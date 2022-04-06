@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lollipop.candy.system.dao.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lollipop.candy.system.domain.UserEntity">
+        <id column="user_id" property="userId" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="salt" property="salt" />
+        <result column="name" property="name" />
+        <result column="sex" property="sex" />
+        <result column="mobile" property="mobile" />
+        <result column="nick_name" property="nickName" />
+        <result column="dept_id" property="deptId" />
+        <result column="unit_dept_id" property="unitDeptId" />
+        <result column="email" property="email" />
+        <result column="description" property="description" />
+        <result column="avatar" property="avatar" />
+        <result column="comment" property="comment" />
+        <result column="user_type" property="userType" />
+        <result column="status" property="status" />
+        <result column="dingding_user_id" property="dingdingUserId" />
+        <result column="last_login_time" property="lastLoginTime" />
+        <result column="creator" property="creator" />
+        <result column="create_time" property="createTime" />
+        <result column="modifier" property="modifier" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="flag" property="flag" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, username, password, salt, name, sex, mobile, nick_name, dept_id, unit_dept_id, email, description, avatar, comment, user_type, status, dingding_user_id, last_login_time, creator, create_time, modifier, modify_time, flag
+    </sql>
+
+
+	<select id="selectPagedList" resultType="com.lollipop.candy.system.domain.UserEntity">
+		select * from t_user
+	</select>
+	
+</mapper>

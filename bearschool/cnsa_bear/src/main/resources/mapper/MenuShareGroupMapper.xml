@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianyin.portrait.dao.MenuShareGroupMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tianyin.portrait.domain.MenuShareGroupModel">
+        <id column="id" property="id" />
+        <result column="group_name" property="groupName" />
+        <result column="group_comment" property="groupComment" />
+        <result column="sort_num" property="sortNum" />
+        <result column="status" property="status" />
+        <result column="scbj" property="scbj" />
+        <result column="max_num" property="maxNum" />
+        <result column="dept_id" property="deptId" />
+        <result column="extra_creater" property="extraCreater" />
+        <result column="extra_createtime" property="extraCreatetime" />
+        <result column="extra_modifier" property="extraModifier" />
+        <result column="extra_modifytime" property="extraModifytime" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, group_name, group_comment, sort_num, status, scbj, max_num, dept_id, extra_creater, extra_createtime, extra_modifier, extra_modifytime
+    </sql>
+
+
+	<select id="selectPagedList" resultType="com.tianyin.portrait.domain.MenuShareGroupModel">
+		select * from t_menu_share_group
+	</select>
+	
+</mapper>
